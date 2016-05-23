@@ -1,0 +1,25 @@
+<!-- Read from data.flats with owner's name as key -->
+<% flat = data.flats[owner] %>
+
+<!-- Inject flat data in template -->
+<div class="banner-flat" style="background-image: url('<%= image_path flat.picture %>');"></div>
+  <div class="header-flat">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+          <div class="header-flat-details">
+            <div class="header-flat-owner align-center">
+              <%= image_tag flat.owner_picture, class: "img-circle" %>
+              <p><%= flat.owner_name %></p>
+              <h1><%= flat.summary %></h1>
+              <p><%= flat.city %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+
+        </div>
+
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+seb:
+  owner_name: Sebastien Saunier
+  picture: nath-home.jpg
+  owner_picture: seb.jpg
+  name: La maison de Seb
+  summary: Lumineux avec jardin
+  city: Lille, France
+  wifi: true
+romain:
+  owner_name: Romain Paillard
+  picture: card-paris.jpg
+  owner_picture: romain.jpg
+  name: Chez Romain
+  summary: Typique et cosy
+  city: Paris, UK
+  wifi: false
+anne:
+  owner_name: Anne Testing
+  picture: card-brussels.jpeg
+  owner_picture: anne.jpg
+  name: Chez Anne
+  summary: Idéalement situé
+  city: Bruxelles, UK
+  wifi: false
+agnes:
+  owner_name: teste
+  picture: card-london.jpeg
+  owner_picture: anne.jpg
+  name: Chez Anne
+  summary: Idéalement situé
+  city: Londres, UK
+  wifi: false
+

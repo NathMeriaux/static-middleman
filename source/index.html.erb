@@ -2,15 +2,6 @@
 title: Le Wagon Middleman boilerplate
 ---
 
-<div class="welcome text-center padded">
-  <h1>Welcome to Middleman</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p>
-</div>
-
-
-
 <div class="banner">
       <div class="banner-content">
         <h1>Bienvenue</h1>
@@ -73,49 +64,21 @@ title: Le Wagon Middleman boilerplate
 <div class="wrapper-grey padded">
   <div class="container">
   <h2 class="text-center">Votre prochain voyage</h2>
-
-
     <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
-          <div class="card-category">Bruxelles</div>
+      <% data.flats.each do |owner, flat| %>
+        <div class="col-xs-12 col-md-4">
+          <div class="card" style="background-image: url('<%= image_path flat.picture %>');">
+            <div class="card-category"><%= flat.city %></div>
             <div class="card-description">
-              <h2>Chez Anne</h2>
-              <p>Idéalement situé</p>
+            <h2><%= flat.name %></h2>
+            <p><%= flat.summary %></p>
             </div>
-            <% link_to '#' do %>
-            <%= image_tag 'anne.jpg', class: "card-user avatar avatar-large" %>
-            <% end %>
-           <!--  <img class="card-user avatar avatar-large" src="images/anne.jpg"> -->
-            <!-- <a href="#" class="card-link" target="_blank"></a> -->
+          <%= image_tag flat.owner_picture, class:"card-user avatar avatar-large" %>
+          <%= link_to "#", "flats/#{owner}.html", class: "card-link" %>
+          </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/nath-home.jpg');">
-          <div class="card-category">Lille</div>
-            <div class="card-description">
-              <h2>la maison de Seb</h2>
-              <p>Lumineux avec jardin</p>
-            </div>
-            <% link_to '#' do %>
-            <%= image_tag 'seb.jpg', class: "card-user avatar avatar-large" %>
-            <% end %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
-          <div class="card-category">Paris</div>
-            <div class="card-description">
-              <h2>Chez Romain</h2>
-              <p>Typique et cosy</p>
-            </div>
-            <% link_to '#' do %>
-            <%= image_tag 'romain.jpg', class: "card-user avatar avatar-large" %>
-            <% end %>
-      </div>
+      <% end %>
     </div>
-
-
   </div>
 </div>
 
@@ -158,4 +121,3 @@ title: Le Wagon Middleman boilerplate
       title: "You are here!"
     });
     </script>
-
