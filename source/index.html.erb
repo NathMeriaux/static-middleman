@@ -8,3 +8,154 @@ title: Le Wagon Middleman boilerplate
     <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
   </p>
 </div>
+
+
+
+<div class="banner">
+      <div class="banner-content">
+        <h1>Bienvenue</h1>
+        <p>Vous serez partout chez vous!</p>
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="exampleInputName2"></label>
+            <input type="text" class="form-control input-lg" id="exampleInputName2" placeholder="CheckIn">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail2"></label>
+            <input type="email" class="form-control input-lg" id="exampleInputEmail2" placeholder="CheckOut">
+          </div>
+          <select class="form-control input-lg">
+            <option>1 personne</option>
+            <option>2 personnes</option>
+            <option>3 personnes</option>
+            <option>4 personnes</option>
+          </select>
+          <button type="submit" class="btn btn-primary btn-lg">Chercher</button>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- Your features code -->
+<div class="container">
+
+  <div class="text-center padded features">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= image_tag "globe.png" %>
+        <h2>Découvrez le monde</h2>
+        <p>La terre est votre maison.</p>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%=image_tag "dollar.png" %>
+        <h2>Payez en ligne</h2>
+        <p>Le paiement en cash n'est plus possible.</p>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%=image_tag "beer.png" %>
+        <h2>Rencontrez</h2>
+        <p>Découvrez de nouvelles cultures et styles de vie.</p>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%=image_tag "heart.png" %>
+        <h2>Partagez et aimez</h2>
+        <p>Rejoignez une communauté que vous aimerez.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="wrapper-grey padded">
+  <div class="container">
+  <h2 class="text-center">Votre prochain voyage</h2>
+
+
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
+          <div class="card-category">Bruxelles</div>
+            <div class="card-description">
+              <h2>Chez Anne</h2>
+              <p>Idéalement situé</p>
+            </div>
+            <% link_to '#' do %>
+            <%= image_tag 'anne.jpg', class: "card-user avatar avatar-large" %>
+            <% end %>
+           <!--  <img class="card-user avatar avatar-large" src="images/anne.jpg"> -->
+            <!-- <a href="#" class="card-link" target="_blank"></a> -->
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/nath-home.jpg');">
+          <div class="card-category">Lille</div>
+            <div class="card-description">
+              <h2>la maison de Seb</h2>
+              <p>Lumineux avec jardin</p>
+            </div>
+            <% link_to '#' do %>
+            <%= image_tag 'seb.jpg', class: "card-user avatar avatar-large" %>
+            <% end %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
+          <div class="card-category">Paris</div>
+            <div class="card-description">
+              <h2>Chez Romain</h2>
+              <p>Typique et cosy</p>
+            </div>
+            <% link_to '#' do %>
+            <%= image_tag 'romain.jpg', class: "card-user avatar avatar-large" %>
+            <% end %>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+    <!-- Your newsletter code -->
+
+  <div class="text-center padded">
+    <h2>Pour recevoir notre newsletter</h2>
+      <p>Laissez-nous votre email et recevez nos informations régulièrement</p>
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="exampleInputEmail2"></label>
+        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="nath@example.com">
+      </div>
+      <button type="submit" class="btn btn-primary">S'abonner</button>
+    </form>
+  </div>
+
+    <!-- Your map code -->
+
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript">
+    var myLatlng = new google.maps.LatLng(48.852937,2.364178);
+
+    var myOptions = {
+      zoom: 16,
+      center: myLatlng,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#f49935"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"hue":"#fad959"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.local","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"hue":"#a1cdfc"},{"saturation":30},{"lightness":49}]}] // TODO: replace [] by array from https://snazzymaps.com/
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), myOptions);
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: "You are here!"
+    });
+    </script>
+
